@@ -1,0 +1,120 @@
+
+header{
+    padding: 0 10x;
+    transition: 0.7s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    
+    .header{
+        
+        padding: 10px !important;
+        .content-logo{
+            .logo{
+                width: 100px;
+                border-radius: 100%;
+                margin:10px;
+            }
+        }
+
+        .carrito-mobile{
+            margin: 0 15px;
+            border: none;
+            background-color: transparent;
+            
+            @media screen and (min-width: 992px) {
+                display: none;
+            }
+
+            .fa-solid{
+                font-size: 20px;
+                
+            }
+        }
+
+        .collapse{
+            .navbar-nav{
+                .content-btn{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    @media screen and (min-width: 992px) {
+                        display: inline-block;
+                        
+                    }
+                    
+                    .btn{
+                        text-align: start;
+                        background-color: transparent;
+                        border: none;
+                        color: black;
+                        padding: 8px;
+
+                        @media screen and (min-width: 992px) {
+                            width: auto;
+                        }
+
+                        @media screen and (max-width: 991px) {
+                            padding: 8px 0;
+                        }
+                    }
+                }
+                
+            }
+
+            .d-flex{
+                padding: 8px;
+
+                @media screen and (max-width: 991px) {
+                    padding: 0;
+                }
+
+            }
+
+            
+        }
+
+        .carrito{
+            padding: 8px;
+            margin-right: 20px;
+            border: none;
+            background-color: transparent;
+            visibility: visible;
+            font-size: 20px;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }   
+
+        .desactive{
+            visibility: hidden;
+        }
+
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -400px; /* Oculto por defecto */
+            width: 400px;
+            height: 100%;
+            background-color: #f4f4f4;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease; /* Transición suave al mostrar/ocultar */
+            padding: 20px;
+            z-index: 999;
+        }
+    }
+}
+
+header.abajo{
+    background: rgb(255, 182, 193);
+    padding: 5px 10px;
+}
+
+
+
+#toggleCartBtn {
+    display: flex; /* Por defecto visible */
+}
+
