@@ -67,3 +67,29 @@ toggleButton.addEventListener('click', function() {
         elementoVisible.style.display = 'flex';
     }
 });
+
+
+const contenedorTarjetas = document.getElementById("productos-conteiner");
+
+function crearTarjetaProductosInicio(productos){
+    productos.forEach(producto => {
+        const nuevoProducto=document.createElement("div");
+        nuevoProducto.classList = "tarjeta-producto";
+        nuevoProducto.innerHTML = `
+        <div class="producto" style="width: 18rem;">
+                <img src=${producto.imagen} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">${producto.nombre}</h5>
+                  <div class="mt-2 precio">$${producto.precio}</div>
+                  <div class="codigo-content">
+                    <label class="mt-2">Código:</label>
+                    <div class="codigo mt-2">${producto.codigo}</div>
+                  </div>
+                  <a href="#" class="btn btn-primary mt-1">Comprar</a>
+                </div>
+            </div>`
+        contenedorTarjetas.appendChild(nuevoProducto);
+    });
+}
+
+crearTarjetaProductosInicio(listaProductos);
