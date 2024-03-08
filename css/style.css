@@ -16,18 +16,11 @@ header .header .content-logo .logo {
   border-radius: 100%;
   margin: 10px;
 }
-header .header .carrito-mobile {
-  margin: 0 15px;
+header .header .navbar-toggler {
   border: none;
-  background-color: transparent;
 }
-@media screen and (min-width: 992px) {
-  header .header .carrito-mobile {
-    display: none;
-  }
-}
-header .header .carrito-mobile .fa-solid {
-  font-size: 20px;
+header .header .navbar-toggler .navbar-toggler-icon {
+  color: black;
 }
 header .header .collapse .navbar-nav .content-btn {
   display: flex;
@@ -66,10 +59,7 @@ header .header .collapse .d-flex {
 header .header .carrito {
   padding: 8px;
   margin-right: 20px;
-  border: none;
-  background-color: transparent;
-  visibility: visible;
-  font-size: 20px;
+  font-size: 25px;
 }
 header .header .carrito:hover {
   cursor: pointer;
@@ -89,6 +79,16 @@ header .header .cart-panel {
   padding: 20px;
   z-index: 999;
 }
+header .header .cart-panel .btn-cerrar-popup {
+  color: #BBBBBB;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+  text-decoration: none;
+}
+header .header .cart-panel .btn-cerrar-popup:hover {
+  color: #000;
+}
 
 header.abajo {
   background: rgb(255, 182, 193);
@@ -97,6 +97,23 @@ header.abajo {
 
 #toggleCartBtn {
   display: flex; /* Por defecto visible */
+}
+
+.fa-solid {
+  position: relative;
+}
+
+#cuenta-carrito {
+  background-color: red;
+  border-radius: 100%;
+  display: inline-block;
+  width: 15px;
+  line-height: 15px;
+  aspect-ratio: 1;
+  text-align: center;
+  font-size: 10px;
+  position: absolute;
+  right: 1px;
 }
 
 .iniciar .overlay-c .datos-registro, .iniciar .overlay .datos-inicio {

@@ -1,3 +1,4 @@
+//Inicio sesión y Crear cuenta
 var btnAbrirInicio = document.getElementById('btn-abrir-inicio'),
 overlay = document.getElementById('overlay'), 
 popup=document.getElementById('popup'),
@@ -23,11 +24,14 @@ btnCerrarCrearCuenta.addEventListener('click', function(){
     overlayC.classList.remove('active-c');
 });
 
+//Efecto header
 window.addEventListener("scroll", function(){
     var header = document.querySelector("header");
     header.classList.toggle("abajo",window.scrollY>0);
 });
 
+
+//Carrito de compras
 document.getElementById('toggleCartBtn').addEventListener('click', function() {
     var cartPanel = document.getElementById('cartPanel');
     cartPanel.style.right = (cartPanel.style.right === '-400px') ? '0' : '-400px';
@@ -43,7 +47,12 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Obtener referencias a los elementos del DOM
+var btnCerrarCarrito=document.getElementById('btn-cerrar-carrito');
+
+btnCerrarCarrito.addEventListener('click', function(){
+    cartPanel.style.right = '-400px';
+});
+
 const toggleButton = document.getElementById('toggleButton');
 const elementoVisible = document.getElementById('toggleCartBtn');
 
