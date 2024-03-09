@@ -3,7 +3,20 @@
 @import 'componentes/productos';
 @import 'componentes/footer';
 @import 'componentes/registrarse';
+@import 'componentes/carrito';
 
 .margen{
     margin: 10px 0;
+}
+
+.contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+
+    grid-template-areas: 
+    'header'
+    'productos'
+    'footer';
 }

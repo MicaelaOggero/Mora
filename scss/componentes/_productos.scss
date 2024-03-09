@@ -10,13 +10,18 @@
     .producto{
         text-align: center;
         margin: 40px 20px;
+        transition: 200ms;
+
+        &:hover{
+            translate: 0 -10px;
+        }
 
         .card-img-top{
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         .card-body{
-
+            
             .precio{
                 font-size: 20px;
                 font-weight: bold;
@@ -39,6 +44,8 @@
                     background-color: rgba(255, 182, 193, 0.474);
                 }
             }
+
+            
         }
     }
 }

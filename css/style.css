@@ -6,7 +6,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
+  z-index: 1;
 }
 header .header {
   padding: 10px !important;
@@ -123,7 +124,7 @@ header.abajo {
   margin: 20px 10px;
 }
 
-.iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .contenedor-productos .producto .card-body .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn {
+.carrito-page .btn-carrito .boton .btn-primary, .carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary, .iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .contenedor-productos .producto .card-body .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn {
   background-color: rgb(255, 182, 193);
   border: none;
   color: black;
@@ -141,6 +142,7 @@ header.abajo {
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  z-index: 2;
 }
 .iniciar .overlay .datos-inicio {
   display: flex;
@@ -215,6 +217,10 @@ header.abajo {
 .contenedor-productos .producto {
   text-align: center;
   margin: 40px 20px;
+  transition: 200ms;
+}
+.contenedor-productos .producto:hover {
+  translate: 0 -10px;
 }
 .contenedor-productos .producto .card-img-top {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -312,7 +318,7 @@ header.abajo {
   margin: 20px 10px;
 }
 
-.iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn, .contenedor-productos .producto .card-body .btn {
+.carrito-page .btn-carrito .boton .btn-primary, .carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary, .iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn, .contenedor-productos .producto .card-body .btn {
   background-color: rgb(255, 182, 193);
   border: none;
   color: black;
@@ -330,6 +336,7 @@ header.abajo {
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  z-index: 2;
 }
 .iniciar .overlay-c .datos-registro {
   display: flex;
@@ -372,8 +379,109 @@ header.abajo {
   visibility: visible;
 }
 
+.carrito-page {
+  grid-area: productos;
+  width: 100%;
+}
+.carrito-page .contenedor-carrito {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  margin-top: 160px;
+  align-items: center;
+}
+.carrito-page .contenedor-carrito .producto {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  padding: 10px;
+}
+.carrito-page .contenedor-carrito .producto .card-img-top {
+  width: 200px;
+  margin-right: 20px;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle {
+  height: 100%;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle .card-title {
+  font-size: 30px;
+  width: 300px;
+  margin-right: 10px;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle .precio {
+  font-size: 20px;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content {
+  display: flex;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content .mt-2 {
+  margin-right: 5px;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .botones {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-items: flex-end;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary {
+  font-size: 20px;
+  width: 35px;
+  text-align: center;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary:hover {
+  background-color: rgba(255, 182, 193, 0.474);
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .cantidad-elementos {
+  margin: 0 15px;
+}
+.carrito-page .btn-carrito {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.carrito-page .btn-carrito .total-unidades {
+  display: flex;
+}
+.carrito-page .btn-carrito .total-unidades .unidades {
+  margin-right: 10px;
+}
+.carrito-page .btn-carrito .total-precio {
+  display: flex;
+}
+.carrito-page .btn-carrito .total-precio .precio {
+  margin-right: 10px;
+}
+.carrito-page .btn-carrito .boton {
+  margin-top: 20px;
+}
+.carrito-page .btn-carrito .boton .btn-primary {
+  font-size: 20px;
+  text-align: center;
+}
+.carrito-page .btn-carrito .boton .btn-primary:hover {
+  background-color: rgba(255, 182, 193, 0.474);
+}
+
 .margen {
   margin: 10px 0;
+}
+
+.contenedor {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "header" "productos" "footer";
 }
 
 /*# sourceMappingURL=style.css.map */

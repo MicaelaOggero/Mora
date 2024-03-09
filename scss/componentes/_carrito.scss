@@ -1,0 +1,115 @@
+.carrito-page {
+    grid-area: productos;
+    width: 100%;
+
+    .contenedor-carrito{ 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        margin-top: 160px;
+        align-items: center;
+
+        .producto{
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            width: auto;
+            height: 100%;
+        
+            padding: 10px;
+
+            .card-img-top{
+                width: 200px;
+                margin-right: 20px;
+            }
+
+            .content-detalle{
+                height: 100%;
+                
+                .card-body{
+
+                    .sub-detalle{
+                        width: 100%;
+                        display: flex;
+                        align-items: flex-end;
+                        .card-title{
+                            font-size: 30px;
+                            width: 300px;
+                            margin-right: 10px;
+                        }
+                        .precio{
+                            font-size: 20px;
+                        }
+                    }
+
+                    .codigo-content{
+                        display: flex;
+
+                        .mt-2{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                .botones{
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    justify-items: flex-end;
+                    
+                    .btn-primary{
+                        @extend %btn-general;
+                        font-size: 20px;
+                        width: 35px;
+                        text-align: center;
+                        &:hover{
+                            background-color: rgba(255, 182, 193, 0.474);
+                        }
+                    }
+                    .cantidad-elementos{
+                        margin: 0  15px;
+                    }
+                }
+            }
+        }
+
+        
+    }
+
+    .btn-carrito{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .total-unidades{
+            display: flex;
+
+            .unidades{
+                margin-right: 10px;
+            }
+        }
+
+        .total-precio{
+            display: flex;
+
+            .precio{
+                margin-right: 10px;
+            }
+        }
+
+        .boton{
+            margin-top: 20px;
+            .btn-primary{
+                @extend %btn-general;
+                font-size: 20px;
+                text-align: center;
+                &:hover{
+                    background-color: rgba(255, 182, 193, 0.474);
+                }
+            }
+        }
+    }
+}

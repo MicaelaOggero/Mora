@@ -21,7 +21,7 @@ const listaProductos = [
     
     {
         id:3,
-        nombre: "Conjunto de encaje",
+        nombre: "Conjunto deportivo",
         precio: 3962,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
