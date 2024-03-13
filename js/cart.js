@@ -1,7 +1,11 @@
-const contenedorTarjetas = document.getElementById("productos-conteiner");
+const contenedorTarjetasCart = document.getElementById("productos-carrito");
+const unidadesElement = document.getElementById("unidades");
+const precioElement = document.getElementById("precio");
+const carritoVacioElement = document.getElementById("carrito-vacio");
+const totalesElement = document.getElementById("totales");
 
 function crearTarjetaProductosInicio(){
-    contenedorTarjetas.innerHTML="";
+    contenedorTarjetasCart.innerHTML="";
     const productos=JSON.parse(localStorage.getItem("productos"));
     console.log(productos);
     if(productos && productos.length > 0){
@@ -17,27 +21,60 @@ function crearTarjetaProductosInicio(){
                             <div class=" precio">$${producto.precio}</div>
                         </div>
                         <div class="codigo-content">
-                            <label class="mt-2">Código:</label>
-                            <div class="codigo mt-2">${producto.codigo}</div>
+                            <label class="m-r">Código:</label>
+                            <div>${producto.codigo}</div>
                         </div>
                         
                     </div>
                     <div class="botones">
-                        <button class="btn btn-primary mt-1">-</button>
-                            <div class="cantidad-elementos">0</div>
-                        <button class="btn btn-primary mt-1">+</button>
+                        <div class="sub-botones">
+                            <button class="btn btn-primary mt-1">-</button>
+                            <span class="cantidad-elementos">${producto.cantidad}</span>
+                            <button class="btn btn-primary mt-1">+</button>
+                        </div>
+                        <button class="boton mt-1" id="btn-eliminar-todo"><i class="fa-solid fa-trash"></i></button>
                     </div>
                     
                 </div>
             </div>`
-            contenedorTarjetas.appendChild(nuevoConjunto);
-            nuevoConjunto.getElementsByTagName("button")[1].addEventListener("click", ()=>agregarAlCarrito(producto));
-            nuevoConjunto.getElementsByTagName("button")[0].addEventListener("click", ()=>{restarAlCarrito(producto)
-            crearTarjetaProductosInicio();
+            contenedorTarjetasCart.appendChild(nuevoConjunto);
+            nuevoConjunto.getElementsByTagName("button")[1].addEventListener("click", (e)=> {
+            const cuentaElement= e.target.parentElement.getElementsByTagName("span")[0];
+            cuentaElement.innerText=agregarAlCarrito(producto);
+            actualizarTotales();
             });
-        });
+            nuevoConjunto.getElementsByTagName("button")[0].addEventListener("click", (e)=> {
+            restarAlCarrito(producto);  
+            crearTarjetaProductosInicio();
+            actualizarTotales();
+            });
+        });      
     }
-    
 }
 
 crearTarjetaProductosInicio();
+actualizarTotales();
+
+function actualizarTotales(){
+    const productos= JSON.parse(localStorage.getItem("productos"));
+    let unidades =0;
+    let precio=0;
+    if(productos && productos.length>0){
+        productos.forEach(productos => {unidades += productos.cantidad;
+        precio += productos.precio * productos.cantidad;
+        })
+        unidadesElement.innerText=unidades;
+        precioElement.innerText=precio;
+    }
+}
+
+function revisarMensajeVacio(){
+    const productosConjunto=JSON.parse(localStorage.getItem("productos"));
+    console.log(productosConjunto, productosConjunto == true);
+    carritoVacioElement.classList.toggle("escondido", productosConjunto && productosConjunto.length>0);
+    totalesElement.classList.toggle("escondido", !(productosConjunto && productosConjunto.length>0));
+}
+
+
+
+revisarMensajeVacio();

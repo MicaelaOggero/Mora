@@ -16,7 +16,7 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "../imagenes/conjunto.jpg",
+        imagen: "imagenes/conjunto.jpg",
     },
     
     {
@@ -26,7 +26,7 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "../imagenes/conjunto.jpg",
+        imagen: "imagenes/conjunto.jpg",
     },
 
     {
@@ -36,7 +36,7 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "../imagenes/conjunto.jpg",
+        imagen: "imagenes/conjunto.jpg",
     },
 
     {
@@ -46,7 +46,7 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "../imagenes/conjunto.jpg",
+        imagen: "imagenes/conjunto.jpg",
     },
 
     {
@@ -56,7 +56,7 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "../imagenes/conjunto.jpg",
+        imagen: "imagenes/conjunto.jpg",
     },
 
     {
@@ -66,7 +66,7 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "../imagenes/conjunto.jpg",
+        imagen: "imagenes/conjunto.jpg",
     },
 
     {
@@ -76,7 +76,7 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "../imagenes/conjunto.jpg",
+        imagen: "imagenes/conjunto.jpg",
     }
 ]
 

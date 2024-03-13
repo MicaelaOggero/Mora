@@ -65,20 +65,26 @@ header .header .carrito {
 header .header .carrito:hover {
   cursor: pointer;
 }
+header .header .carrito-pege {
+  padding: 8px;
+  margin-right: 20px;
+  font-size: 25px;
+}
 header .header .desactive {
   visibility: hidden;
 }
 header .header .cart-panel {
   position: fixed;
   top: 0;
-  right: -400px; /* Oculto por defecto */
-  width: 400px;
+  right: -500px; /* Oculto por defecto */
+  width: 500px;
   height: 100%;
   background-color: #f4f4f4;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease; /* Transición suave al mostrar/ocultar */
   padding: 20px;
   z-index: 999;
+  overflow: auto;
 }
 header .header .cart-panel .btn-cerrar-popup {
   color: #BBBBBB;
@@ -124,7 +130,7 @@ header.abajo {
   margin: 20px 10px;
 }
 
-.carrito-page .btn-carrito .boton .btn-primary, .carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary, .iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .contenedor-productos .producto .card-body .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn {
+.carrito-page .btn-carrito .totales .boton .btn-primary, .carrito-page .contenedor-carrito .producto .content-detalle .botones .sub-botones .btn-primary, .carrito-page .carrito-title .btn, .iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .contenedor-productos .producto .card-body .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn {
   background-color: rgb(255, 182, 193);
   border: none;
   color: black;
@@ -318,7 +324,7 @@ header.abajo {
   margin: 20px 10px;
 }
 
-.carrito-page .btn-carrito .boton .btn-primary, .carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary, .iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn, .contenedor-productos .producto .card-body .btn {
+.carrito-page .btn-carrito .totales .boton .btn-primary, .carrito-page .contenedor-carrito .producto .content-detalle .botones .sub-botones .btn-primary, .carrito-page .carrito-title .btn, .iniciar .overlay-c .datos-registro .form-registro .contenedor-btnRegistro .btn, .iniciar .overlay .datos-inicio .espacio .form-inicio-sesion .contenedor-btnInicio-sesion .btn, .contenedor-productos .producto .card-body .btn {
   background-color: rgb(255, 182, 193);
   border: none;
   color: black;
@@ -382,6 +388,25 @@ header.abajo {
 .carrito-page {
   grid-area: productos;
   width: 100%;
+  flex: 1;
+}
+.carrito-page .carrito-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+}
+.carrito-page .carrito-title .pedido {
+  font-size: 30px;
+  font-weight: bold;
+}
+.carrito-page .carrito-title .btn {
+  font-size: 20px;
+  text-align: center;
+}
+.carrito-page .carrito-title .btn:hover {
+  background-color: rgba(255, 182, 193, 0.474);
 }
 .carrito-page .contenedor-carrito {
   width: 100%;
@@ -396,24 +421,20 @@ header.abajo {
   display: flex;
   align-items: center;
   width: auto;
-  height: 100%;
   padding: 10px;
 }
 .carrito-page .contenedor-carrito .producto .card-img-top {
-  width: 200px;
+  width: 145px;
   margin-right: 20px;
-}
-.carrito-page .contenedor-carrito .producto .content-detalle {
-  height: 100%;
 }
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle {
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle .card-title {
-  font-size: 30px;
-  width: 300px;
+  font-size: 20px;
+  width: 200px;
   margin-right: 10px;
 }
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle .precio {
@@ -422,25 +443,33 @@ header.abajo {
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content {
   display: flex;
 }
-.carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content .mt-2 {
+.carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content .m-r {
   margin-right: 5px;
 }
 .carrito-page .contenedor-carrito .producto .content-detalle .botones {
   display: flex;
-  align-items: center;
-  height: 100%;
-  justify-items: flex-end;
+  justify-content: space-between;
 }
-.carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary {
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .sub-botones {
+  display: flex;
+  align-items: center;
+  align-content: flex-end;
+  padding-top: 10px;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .sub-botones .btn-primary {
   font-size: 20px;
   width: 35px;
   text-align: center;
 }
-.carrito-page .contenedor-carrito .producto .content-detalle .botones .btn-primary:hover {
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .sub-botones .btn-primary:hover {
   background-color: rgba(255, 182, 193, 0.474);
 }
-.carrito-page .contenedor-carrito .producto .content-detalle .botones .cantidad-elementos {
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .sub-botones .cantidad-elementos {
   margin: 0 15px;
+}
+.carrito-page .contenedor-carrito .producto .content-detalle .botones .boton {
+  background-color: transparent;
+  border: none;
 }
 .carrito-page .btn-carrito {
   width: 100%;
@@ -449,27 +478,45 @@ header.abajo {
   align-items: center;
   margin-bottom: 30px;
 }
-.carrito-page .btn-carrito .total-unidades {
+.carrito-page .btn-carrito .carrito-vacio {
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid salmon;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.carrito-page .btn-carrito .carrito-vacio a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.carrito-page .btn-carrito .totales .total-unidades {
   display: flex;
 }
-.carrito-page .btn-carrito .total-unidades .unidades {
+.carrito-page .btn-carrito .totales .total-unidades .unidades {
   margin-right: 10px;
 }
-.carrito-page .btn-carrito .total-precio {
+.carrito-page .btn-carrito .totales .total-precio {
   display: flex;
 }
-.carrito-page .btn-carrito .total-precio .precio {
+.carrito-page .btn-carrito .totales .total-precio .precio {
   margin-right: 10px;
 }
-.carrito-page .btn-carrito .boton {
+.carrito-page .btn-carrito .totales .boton {
   margin-top: 20px;
 }
-.carrito-page .btn-carrito .boton .btn-primary {
+.carrito-page .btn-carrito .totales .boton .btn-primary {
   font-size: 20px;
   text-align: center;
 }
-.carrito-page .btn-carrito .boton .btn-primary:hover {
+.carrito-page .btn-carrito .totales .boton .btn-primary:hover {
   background-color: rgba(255, 182, 193, 0.474);
+}
+
+.escondido {
+  display: none;
 }
 
 .margen {

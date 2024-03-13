@@ -83,6 +83,12 @@ header{
             }
         }   
 
+        .carrito-pege{
+            padding: 8px;
+            margin-right: 20px;
+            font-size: 25px;
+        }
+
         .desactive{
             visibility: hidden;
         }
@@ -90,14 +96,15 @@ header{
         .cart-panel {
             position: fixed;
             top: 0;
-            right: -400px; /* Oculto por defecto */
-            width: 400px;
+            right: -500px; /* Oculto por defecto */
+            width: 500px;
             height: 100%;
             background-color: #f4f4f4;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
             transition: right 0.3s ease; /* Transición suave al mostrar/ocultar */
             padding: 20px;
             z-index: 999;
+            overflow: auto;
 
             .btn-cerrar-popup{
                 color: #BBBBBB;
