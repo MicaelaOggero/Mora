@@ -13,7 +13,7 @@ function crearTarjetaProductosInicio(){
             const nuevoConjunto=document.createElement("div");
             nuevoConjunto.classList = "tarjeta-producto";
             nuevoConjunto.innerHTML = `<div class="producto">
-                <img src="${producto.imagen}" class="card-img-top" alt="...">
+                <img src="../${producto.imagen}" class="card-img-top" alt="...">
                 <div class="content-detalle">
                     <div class="card-body">
                         <div class="sub-detalle">
