@@ -77,6 +77,14 @@ function revisarMensajeVacio(){
     totalesElement.classList.toggle("escondido", !(productosConjunto && productosConjunto.length>0));
 }
 
+
 revisarMensajeVacio();
 
+vaciarCarritoElement.addEventListener("click", vaciarCarrito);
+function vaciarCarrito(){
+    localStorage.removeItem("productos");
+    actualizarTotales();
+    crearTarjetaProductosInicio();
+    revisarMensajeVacio();
+}
 

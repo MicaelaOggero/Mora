@@ -55,8 +55,15 @@ const cuentaCarritoElement = document.getElementById("cuenta-carrito");
 
 function actualizNumeroCarrito(){
     const memoria=JSON.parse(localStorage.getItem("productos"));
-    const cuenta = memoria.reduce((acum, current)=> acum+current.cantidad, 0);
-    cuentaCarritoElement.innerText=cuenta;
+    if(memoria && memoria.length>0){
+        const cuenta = memoria.reduce((acum, current)=> acum+current.cantidad, 0);
+        cuentaCarritoElement.innerText=cuenta;
+        
+    }else{
+        cuentaCarritoElement.innerText=0;
+        
+    }
+    
 }
 
 actualizNumeroCarrito();
