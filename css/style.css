@@ -8,6 +8,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 1;
+  background-color: #fff;
 }
 header .header {
   padding: 10px !important;
@@ -143,6 +144,9 @@ header.abajo {
   padding: 5px 10px;
 }
 
+.iniciar {
+  grid-area: producto;
+}
 .iniciar .overlay {
   background: rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -264,6 +268,7 @@ header.abajo {
   font-family: "Kanit", sans-serif;
   margin-top: auto;
   padding: 1em 0;
+  align-self: flex-end;
 }
 .contenedor .contenedor-footer .footer {
   display: flex;
@@ -337,6 +342,9 @@ header.abajo {
   padding: 5px 10px;
 }
 
+.iniciar {
+  grid-area: productos;
+}
 .iniciar .overlay-c {
   background: rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -570,6 +578,14 @@ header.abajo {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "header" "productos" "footer";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=style.css.map */
