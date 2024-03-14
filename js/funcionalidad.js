@@ -1,9 +1,9 @@
 //Inicio sesión y Crear cuenta
-var btnAbrirInicio = document.getElementById('btn-abrir-inicio'),
+let btnAbrirInicio = document.getElementById('btn-abrir-inicio'),
 overlay = document.getElementById('overlay'),
 popup=document.getElementById('popup'),
 btnCerrarInicio=document.getElementById('btn-cerrar-inicio');
-var btnAbrirCrearCuenta = document.getElementById('btn-abrir-crearCuenta'),
+let btnAbrirCrearCuenta = document.getElementById('btn-abrir-crearCuenta'),
 overlayC = document.getElementById('overlay-c'),
 popupC=document.getElementById('popup-c'),
 btnCerrarCrearCuenta=document.getElementById('btn-cerrar-crearCuenta');

@@ -86,5 +86,6 @@ function vaciarCarrito(){
     actualizarTotales();
     crearTarjetaProductosInicio();
     revisarMensajeVacio();
+    actualizNumeroCarrito();
 }
 

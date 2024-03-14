@@ -25,30 +25,7 @@ function crearTarjetaProductosInicio(productos){
 
 crearTarjetaProductosInicio(listaProductos);
 
-//Carrito de compras
-// document.getElementById('toggleCartBtn').addEventListener('click', function() {
-//   var cartPanel = document.getElementById('cartPanel');
-//   cartPanel.style.right = (cartPanel.style.right === '-500px') ? '0' : '-500px';
-// });
-
-// document.getElementById('carrito-page').addEventListener('click', function(event) {
-//   event.stopPropagation(); // Detiene la propagación del evento clic
-// });
-
-// document.addEventListener('click', function(event) {
-//   var cartPanel = document.getElementById("cartPanel");
-
-//   // Verifica si el clic se realizó fuera del panel del carrito, en el botón de alternar el carrito o en un botón "Comprar"
-//   if (event.target !== document.getElementById('toggleCartBtn') && !event.target.classList.contains('btn-comprar')) {
-//       cartPanel.style.right = '-500px';
-//   }
-// });
-
-// var btnCerrarCarrito=document.getElementById('btn-cerrar-carrito');
-
-// btnCerrarCarrito.addEventListener('click', function(){
-//   cartPanel.style.right = '-500px';
-// });
+//Carrito de compras - funcionalidad cart
 
 // Verificar el tamaño de la pantalla
 if (window.innerWidth <= 700) {
@@ -72,7 +49,7 @@ function funcionalidadParaPantallasPequenas() {
   });
   
   document.addEventListener('click', function(event) {
-    var cartPanel = document.getElementById("cartPanel");
+    let cartPanel = document.getElementById("cartPanel");
   
     // Verifica si el clic se realizó fuera del panel del carrito, en el botón de alternar el carrito o en un botón "Comprar"
     if (event.target !== document.getElementById('toggleCartBtn') && !event.target.classList.contains('btn-comprar')) {
@@ -85,7 +62,7 @@ function funcionalidadParaPantallasPequenas() {
 function funcionalidadParaPantallasGrandes() {
   // Aquí va la funcionalidad específica para pantallas grandes
   document.getElementById('toggleCartBtn').addEventListener('click', function() {
-    var cartPanel = document.getElementById('cartPanel');
+    let cartPanel = document.getElementById('cartPanel');
     cartPanel.style.right = (cartPanel.style.right === '-500px') ? '0' : '-500px';
   });
   
@@ -94,7 +71,7 @@ function funcionalidadParaPantallasGrandes() {
   });
   
   document.addEventListener('click', function(event) {
-    var cartPanel = document.getElementById("cartPanel");
+    let cartPanel = document.getElementById("cartPanel");
   
     // Verifica si el clic se realizó fuera del panel del carrito, en el botón de alternar el carrito o en un botón "Comprar"
     if (event.target !== document.getElementById('toggleCartBtn') && !event.target.classList.contains('btn-comprar')) {
