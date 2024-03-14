@@ -3,6 +3,8 @@ const unidadesElement = document.getElementById("unidades");
 const precioElement = document.getElementById("precio");
 const carritoVacioElement = document.getElementById("carrito-vacio");
 const totalesElement = document.getElementById("totales");
+const vaciarCarritoElement=document.getElementById("vaciar");
+
 
 function crearTarjetaProductosInicio(){
     contenedorTarjetasCart.innerHTML="";
@@ -13,7 +15,7 @@ function crearTarjetaProductosInicio(){
             const nuevoConjunto=document.createElement("div");
             nuevoConjunto.classList = "tarjeta-producto";
             nuevoConjunto.innerHTML = `<div class="producto">
-                <img src="../${producto.imagen}" class="card-img-top" alt="...">
+                <img src="${producto.imagen}" class="card-img-top" alt="...">
                 <div class="content-detalle">
                     <div class="card-body">
                         <div class="sub-detalle">
@@ -75,6 +77,6 @@ function revisarMensajeVacio(){
     totalesElement.classList.toggle("escondido", !(productosConjunto && productosConjunto.length>0));
 }
 
-
-
 revisarMensajeVacio();
+
+

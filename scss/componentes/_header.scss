@@ -99,12 +99,17 @@ header{
             right: -500px; /* Oculto por defecto */
             width: 500px;
             height: 100%;
-            background-color: #f4f4f4;
+            background-color: #faecec;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
             transition: right 0.3s ease; /* Transición suave al mostrar/ocultar */
             padding: 20px;
             z-index: 999;
             overflow: auto;
+
+            @media screen and (max-width: 700px) {
+                right: -300px;
+                width: 300px;
+            }
 
             .btn-cerrar-popup{
                 color: #BBBBBB;

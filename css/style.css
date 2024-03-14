@@ -79,12 +79,18 @@ header .header .cart-panel {
   right: -500px; /* Oculto por defecto */
   width: 500px;
   height: 100%;
-  background-color: #f4f4f4;
+  background-color: #faecec;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease; /* Transición suave al mostrar/ocultar */
   padding: 20px;
   z-index: 999;
   overflow: auto;
+}
+@media screen and (max-width: 700px) {
+  header .header .cart-panel {
+    right: -300px;
+    width: 300px;
+  }
 }
 header .header .cart-panel .btn-cerrar-popup {
   color: #BBBBBB;
@@ -401,12 +407,22 @@ header.abajo {
   font-size: 30px;
   font-weight: bold;
 }
+@media screen and (max-width: 700px) {
+  .carrito-page .carrito-title .pedido {
+    font-size: 25px;
+  }
+}
 .carrito-page .carrito-title .btn {
   font-size: 20px;
   text-align: center;
 }
 .carrito-page .carrito-title .btn:hover {
   background-color: rgba(255, 182, 193, 0.474);
+}
+@media screen and (max-width: 700px) {
+  .carrito-page .carrito-title .btn {
+    font-size: 15px;
+  }
 }
 .carrito-page .contenedor-carrito {
   width: 100%;
@@ -427,6 +443,11 @@ header.abajo {
   width: 145px;
   margin-right: 20px;
 }
+@media screen and (max-width: 700px) {
+  .carrito-page .contenedor-carrito .producto .card-img-top {
+    width: 100px;
+  }
+}
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle {
   width: 100%;
   display: flex;
@@ -437,14 +458,32 @@ header.abajo {
   width: 200px;
   margin-right: 10px;
 }
+@media screen and (max-width: 700px) {
+  .carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle .card-title {
+    font-size: 15px;
+    margin-right: 5px;
+    width: 100px;
+  }
+}
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle .precio {
   font-size: 20px;
 }
+@media screen and (max-width: 700px) {
+  .carrito-page .contenedor-carrito .producto .content-detalle .card-body .sub-detalle .precio {
+    font-size: 15px;
+  }
+}
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content {
   display: flex;
+  font-size: 13px;
 }
 .carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content .m-r {
   margin-right: 5px;
+}
+@media screen and (max-width: 700px) {
+  .carrito-page .contenedor-carrito .producto .content-detalle .card-body .codigo-content {
+    font-size: 10px;
+  }
 }
 .carrito-page .contenedor-carrito .producto .content-detalle .botones {
   display: flex;
@@ -494,12 +533,14 @@ header.abajo {
 }
 .carrito-page .btn-carrito .totales .total-unidades {
   display: flex;
+  justify-content: center;
 }
 .carrito-page .btn-carrito .totales .total-unidades .unidades {
   margin-right: 10px;
 }
 .carrito-page .btn-carrito .totales .total-precio {
   display: flex;
+  justify-content: center;
 }
 .carrito-page .btn-carrito .totales .total-precio .precio {
   margin-right: 10px;

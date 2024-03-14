@@ -41,7 +41,6 @@ function restarAlCarrito(producto){
     }
     localStorage.setItem("productos",JSON.stringify(memoria));
     actualizNumeroCarrito();
-    
     revisarMensajeVacio();
 }
 
@@ -61,4 +60,3 @@ function actualizNumeroCarrito(){
 }
 
 actualizNumeroCarrito();
-
