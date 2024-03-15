@@ -37,12 +37,12 @@ window.addEventListener("scroll", function(){
 
 // Agregar un evento de clic al botón
  toggleButton.addEventListener('click', function() {
-    // Verificar si el elemento es visible
+   
     if (elementoVisible.style.display === 'flex' || elementoVisible.style.display === '') {
-        // Si no es visible, hacerlo visible
+       
        elementoVisible.style.display = 'none';
     } else {
-             // Si es visible, ocultarlo
+            
         elementoVisible.style.display = 'flex';
     }
 });

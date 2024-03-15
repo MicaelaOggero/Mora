@@ -25,20 +25,20 @@ function crearTarjetaProductosInicio(productos){
 
 crearTarjetaProductosInicio(listaProductos);
 
-//Carrito de compras - funcionalidad cart
+//------------------------Carrito de compras - funcionalidad segun tamaño ---------------------
 
-// Verificar el tamaño de la pantalla
+
 if (window.innerWidth <= 700) {
-  // Ejecutar la funcionalidad para pantallas pequeñas
+  
   funcionalidadParaPantallasPequenas();
 } else {
-  // Ejecutar la funcionalidad para pantallas grandes
+  
   funcionalidadParaPantallasGrandes();
 }
 
 // Funcionalidad para pantallas pequeñas
 function funcionalidadParaPantallasPequenas() {
-  // Aquí va la funcionalidad específica para pantallas pequeñas
+  
   document.getElementById('toggleCartBtn').addEventListener('click', function() {
     var cartPanel = document.getElementById('cartPanel');
     cartPanel.style.right = (cartPanel.style.right === '-300px') ? '0' : '-300px';
@@ -60,7 +60,7 @@ function funcionalidadParaPantallasPequenas() {
 
 // Funcionalidad para pantallas grandes
 function funcionalidadParaPantallasGrandes() {
-  // Aquí va la funcionalidad específica para pantallas grandes
+  
   document.getElementById('toggleCartBtn').addEventListener('click', function() {
     let cartPanel = document.getElementById('cartPanel');
     cartPanel.style.right = (cartPanel.style.right === '-500px') ? '0' : '-500px';
@@ -79,6 +79,10 @@ function funcionalidadParaPantallasGrandes() {
     }
   });
 }
+
+
+
+// -----------------------Filtro busqueda----------------------------------
 
 function crearTarjetaProductos(productos){
   productos.forEach(producto => {
@@ -122,3 +126,41 @@ const handleSearch=()=>{
  };
 
  searchInput.addEventListener("input", handleSearch);
+
+ // -----------Funcionalidad header productos-----------------
+
+ // Obtener referencia a los enlaces y al contenedor de productos
+ var enlaces = document.querySelectorAll('a[categoria]');
+var contenedorProductos = document.getElementById('productos-conteiner');
+
+// Agregar un event listener a cada enlace
+enlaces.forEach(function(enlace) {
+    enlace.addEventListener('click', function(event) {
+        event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+        
+        // Obtener la categoría del enlace
+        var categoria = enlace.getAttribute('categoria');
+        console.log(categoria);
+        
+        // Mostrar u ocultar los productos según la categoría seleccionada
+        mostrarProductosPorCategoria(categoria.toLowerCase());
+    });
+});
+
+// Función para mostrar los productos por categoría
+function mostrarProductosPorCategoria(categoria) {
+  contenedorTarjetas.innerHTML="";
+  console.log(categoria);
+  // const filtroConjunto=listaProductos.filter((conjunto) => conjunto.nombre.toLocaleLowerCase()===categoria);
+  const filtroConjunto = listaProductos.filter((conjunto) => 
+  conjunto.nombre.toLocaleLowerCase().includes(categoria.toLowerCase())
+);
+
+  console.log(filtroConjunto);
+  
+  resultado.innerHTML="";
+  
+
+
+ crearTarjetaProductos(filtroConjunto);
+}

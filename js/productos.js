@@ -61,7 +61,7 @@ const listaProductos = [
 
     {
         id:7,
-        nombre: "Media",
+        nombre: "Medias",
         precio: 3962,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
@@ -71,7 +71,7 @@ const listaProductos = [
 
     {
         id:8,
-        nombre: "Bombacha",
+        nombre: "Bombis",
         precio: 3962,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
