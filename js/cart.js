@@ -4,7 +4,7 @@ const precioElement = document.getElementById("precio");
 const carritoVacioElement = document.getElementById("carrito-vacio");
 const totalesElement = document.getElementById("totales");
 const vaciarCarritoElement=document.getElementById("vaciar");
-
+// localStorage.clear();
 
 function crearTarjetaProductosInicio(){
     contenedorTarjetasCart.innerHTML="";
@@ -50,6 +50,11 @@ function crearTarjetaProductosInicio(){
             crearTarjetaProductosInicio();
             actualizarTotales();
             });
+
+            nuevoConjunto.getElementsByTagName("button")[2].addEventListener("click", (e)=> {
+                eliminarUnElemento(producto);
+            });
+
         });      
     }
 }

@@ -44,6 +44,33 @@ function restarAlCarrito(producto){
     revisarMensajeVacio();
 }
 
+function eliminarUnElemento(producto) {
+    const memoria = JSON.parse(localStorage.getItem("productos"));
+    
+    // Encontrar el índice del producto en el array
+    const indiceProducto = memoria.findIndex(item => item.id === producto.id);
+    
+    // Verificar si se encontró el producto
+    if (indiceProducto !== -1) {
+        console.log(indiceProducto);
+        // Eliminar el producto del array
+        memoria.splice(indiceProducto, 1);
+        
+        // Actualizar el localStorage con el nuevo array
+        localStorage.setItem("productos", JSON.stringify(memoria));
+        
+        // Actualizar la visualización del carrito
+
+        actualizNumeroCarrito();
+        revisarMensajeVacio();
+        actualizarTotales();
+    }
+
+    crearTarjetaProductosInicio();
+
+}
+
+
 /** Toma un producto, le agrga cantidad 1 y lo devuelve */
 function getNuevoProductoParaMemoria(producto){
     const nuevoProducto =producto;
