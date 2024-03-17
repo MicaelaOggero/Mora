@@ -4,7 +4,7 @@ const precioElement = document.getElementById("precio");
 const carritoVacioElement = document.getElementById("carrito-vacio");
 const totalesElement = document.getElementById("totales");
 const vaciarCarritoElement=document.getElementById("vaciar");
-// localStorage.clear();
+//  localStorage.clear();
 
 function crearTarjetaProductosInicio(){
     contenedorTarjetasCart.innerHTML="";

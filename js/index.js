@@ -127,40 +127,41 @@ const handleSearch=()=>{
 
  searchInput.addEventListener("input", handleSearch);
 
- // -----------Funcionalidad header productos-----------------
+// -----------Funcionalidad header productos-----------------
 
  // Obtener referencia a los enlaces y al contenedor de productos
  var enlaces = document.querySelectorAll('a[categoria]');
-var contenedorProductos = document.getElementById('productos-conteiner');
+ var contenedorProductos = document.getElementById('productos-conteiner');
+ 
+ // Agregar un event listener a cada enlace
+ enlaces.forEach(function(enlace) {
+     enlace.addEventListener('click', function(event) {
+         event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+         
+         // Obtener la categoría del enlace
+         var categoria = enlace.getAttribute('categoria');
+         console.log(categoria);
+         
+         // Mostrar u ocultar los productos según la categoría seleccionada
+         mostrarProductosPorCategoria(categoria.toLowerCase());
+     });
+ });
+ 
+ // Función para mostrar los productos por categoría
+ function mostrarProductosPorCategoria(categoria) {
+     contenedorTarjetas.innerHTML="";
+     console.log(categoria);
+     const filtroConjunto = listaProductos.filter((conjunto) => 
+     conjunto.nombre.toLocaleLowerCase().includes(categoria.toLowerCase())
+   );
+   
+     console.log(filtroConjunto);
+     
+     resultado.innerHTML="";
+     
+   
+   
+    crearTarjetaProductos(filtroConjunto);
+   }
 
-// Agregar un event listener a cada enlace
-enlaces.forEach(function(enlace) {
-    enlace.addEventListener('click', function(event) {
-        event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-        
-        // Obtener la categoría del enlace
-        var categoria = enlace.getAttribute('categoria');
-        console.log(categoria);
-        
-        // Mostrar u ocultar los productos según la categoría seleccionada
-        mostrarProductosPorCategoria(categoria.toLowerCase());
-    });
-});
 
-// Función para mostrar los productos por categoría
-function mostrarProductosPorCategoria(categoria) {
-  contenedorTarjetas.innerHTML="";
-  console.log(categoria);
-  // const filtroConjunto=listaProductos.filter((conjunto) => conjunto.nombre.toLocaleLowerCase()===categoria);
-  const filtroConjunto = listaProductos.filter((conjunto) => 
-  conjunto.nombre.toLocaleLowerCase().includes(categoria.toLowerCase())
-);
-
-  console.log(filtroConjunto);
-  
-  resultado.innerHTML="";
-  
-
-
- crearTarjetaProductos(filtroConjunto);
-}

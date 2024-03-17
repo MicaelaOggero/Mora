@@ -565,6 +565,78 @@ header.abajo {
   display: none;
 }
 
+.como-comprar {
+  grid-area: productos;
+  margin-top: 150px;
+}
+.como-comprar .comprar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.como-comprar .comprar .principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.como-comprar .comprar .principal .numero {
+  color: black;
+  font-size: 60px;
+  font-weight: 1000;
+}
+.como-comprar .comprar .principal .card-comprar {
+  margin: 30px;
+  position: relative;
+  min-width: 300px;
+  height: 450px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 5px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.como-comprar .comprar .principal .card-comprar .box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.como-comprar .comprar .principal .card-comprar .box:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+}
+.como-comprar .comprar .principal .card-comprar .box .content {
+  padding: 20px;
+  text-align: center;
+}
+.como-comprar .comprar .principal .card-comprar .box .content .icon {
+  top: 80px;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: salmon;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+.como-comprar .comprar .principal .card-comprar .box .content .icon .fa-solid {
+  font-size: 2em;
+}
+.como-comprar .comprar .principal .card-comprar .box .content h3 {
+  margin-top: 120px;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
 .margen {
   margin: 10px 0;
 }
