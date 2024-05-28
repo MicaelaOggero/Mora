@@ -6,7 +6,7 @@ const totalesElement = document.getElementById("totales");
 const vaciarCarritoElement=document.getElementById("vaciar");
 //  localStorage.clear();
 
-function crearTarjetaProductosCart(){
+function crearTarjetaProductosInicio(){
     contenedorTarjetasCart.innerHTML="";
     const productos=JSON.parse(localStorage.getItem("productos"));
     console.log(productos);
@@ -47,7 +47,7 @@ function crearTarjetaProductosCart(){
             });
             nuevoConjunto.getElementsByTagName("button")[0].addEventListener("click", (e)=> {
             restarAlCarrito(producto);  
-            crearTarjetaProductosCart();
+            crearTarjetaProductosInicio();
             actualizarTotales();
             });
 
@@ -59,7 +59,7 @@ function crearTarjetaProductosCart(){
     }
 }
 
-crearTarjetaProductosCart();
+crearTarjetaProductosInicio();
 actualizarTotales();
 
 function actualizarTotales(){
@@ -89,7 +89,7 @@ vaciarCarritoElement.addEventListener("click", vaciarCarrito);
 function vaciarCarrito(){
     localStorage.removeItem("productos");
     actualizarTotales();
-    crearTarjetaProductosCart();
+    crearTarjetaProductosInicio();
     revisarMensajeVacio();
     actualizNumeroCarrito();
 }
