@@ -128,7 +128,23 @@ function crearTarjetaProductos(productos){
               </div>
           </div>`
       contenedorTarjetas.appendChild(nuevoConjunto);
-      nuevoConjunto.getElementsByTagName("button")[0].addEventListener("click", ()=>agregarAlCarrito(producto))
+      nuevoConjunto.getElementsByTagName("button")[0].addEventListener("click", ()=>{
+        agregarAlCarrito(producto);
+        Toastify({
+          text: "Agregaste un producto al carrito",
+          duration: 2000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #ffb6c1, #ffc0cb)",
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+      });
   });
 
 }
