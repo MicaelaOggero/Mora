@@ -6,37 +6,37 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/1.png",
     },
 
     {
         id:2,
         nombre: "Conjunto de algodón",
-        precio: 5500,
+        precio: 5000,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/2.png",
     },
     
     {
         id:3,
         nombre: "Conjunto deportivo",
-        precio: 3962,
+        precio: 5800,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/3.png",
     },
 
     {
         id:4,
         nombre: "Conjunto de encaje",
-        precio: 3962,
+        precio: 5500,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/4.png",
     },
 
     {
@@ -46,37 +46,37 @@ const listaProductos = [
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/5.png",
     },
 
     {
         id:6,
         nombre: "Conjunto de encaje",
-        precio: 3962,
+        precio: 4500,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/6.png",
     },
 
     {
         id:7,
         nombre: "Medias",
-        precio: 3962,
+        precio: 1000,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/7.png",
     },
 
     {
         id:8,
         nombre: "Bombis",
-        precio: 3962,
+        precio: 1500,
         codigo: "AVR1004",
         color: ["rojo", "blanco", "negro"],
         talle: [85, 90, 95, 100],
-        imagen: "imagenes/conjunto.jpg",
+        imagen: "imagenes/8.png",
     }
 ]
 

@@ -6,7 +6,7 @@ function crearTarjetaProductosInicio(productos){
         nuevoConjunto.classList = "tarjeta-producto";
         nuevoConjunto.innerHTML = `
         <div class="producto" style="width: 18rem;">
-                <img src=${producto.imagen} class="card-img-top" alt="...">
+                <img src="../imagenes/${producto.id}.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title mt-3">${producto.nombre}</h5>
                   <div class="mt-2 precio">$${producto.precio}</div>
@@ -18,9 +18,24 @@ function crearTarjetaProductosInicio(productos){
                 </div>
             </div>`
         contenedorTarjetas.appendChild(nuevoConjunto);
-        nuevoConjunto.getElementsByTagName("button")[0].addEventListener("click", ()=>agregarAlCarrito(producto))
-    });
-    
+        nuevoConjunto.getElementsByTagName("button")[0].addEventListener("click", ()=>{
+          agregarAlCarrito(producto);
+          Toastify({
+            text: "Agregaste un producto al carrito",
+            duration: 2000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #ffb6c1, #ffc0cb)",
+            },
+            onClick: function () {}, // Callback after click
+          }).showToast();
+        });
+      });
 }
 
 crearTarjetaProductosInicio(listaProductos);
@@ -80,8 +95,6 @@ function funcionalidadParaPantallasGrandes() {
   });
 }
 
-
-
 // -----------------------Filtro busqueda----------------------------------
 
 function crearTarjetaProductos(productos){
@@ -107,7 +120,6 @@ function crearTarjetaProductos(productos){
   
 }
 
-
 const searchInput =document.getElementById("filtro");
 
 const resultado=document.getElementById("productos-conteiner");
@@ -117,11 +129,8 @@ const handleSearch=()=>{
     const searchIterm=searchInput.value.toLowerCase();
     const filtroConjunto=listaProductos.filter((conjunto) => conjunto.nombre.toLocaleLowerCase().startsWith(searchIterm));
 
-    
     resultado.innerHTML="";
-    
-
-
+  
    crearTarjetaProductos(filtroConjunto);
  };
 
